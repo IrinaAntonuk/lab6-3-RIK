@@ -1,38 +1,251 @@
-.App {
-  text-align: center;
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f3f6fc;
+  color: #1a2c3e;
+  line-height: 1.4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background: white;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1e466e, #2b5a8c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.tabs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 0.75rem;
+  border-bottom: 1px solid #e2edf7;
+  padding-bottom: 0.75rem;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #4a627a;
+}
+
+.tabs button:hover {
+  background: #e9f0f9;
+  color: #1e466e;
+}
+
+.tab-active {
+  background: #1e466e !important;
+  color: white !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.calculator-card {
+  background: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+.calculator-card h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #0f2b3f;
+  border-left: 5px solid #2b7a62;
+  padding-left: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #2c4c6e;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cfdfed;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+  background: #fefefe;
+  transition: 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: #2b7a62;
+  box-shadow: 0 0 0 3px rgba(43,122,98,0.2);
+}
+
+.unit {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: #5e7e9e;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.btn-primary, .btn-secondary {
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #2b7a62;
   color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  background: #1f5e4b;
+  transform: translateY(-1px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-secondary {
+  background: #eef3fa;
+  color: #2c4c6e;
+  border: 1px solid #cddfed;
+}
+
+.btn-secondary:hover {
+  background: #e2eaf3;
+}
+
+.result-section {
+  margin-top: 2rem;
+  background: #f8fafd;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e6f0f8;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #d4e2f0;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a5d4a;
+}
+
+.loan-summary {
+  background: #eef3fa;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 1.2rem;
+  border: 1px solid #e2edf7;
+  background: white;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.payment-table th {
+  background: #eef3fc;
+  padding: 0.9rem 0.6rem;
+  font-weight: 600;
+  color: #1e466e;
+  border-bottom: 1px solid #d4e2f0;
+}
+
+.payment-table td {
+  padding: 0.7rem 0.5rem;
+  text-align: right;
+  border-bottom: 1px solid #ecf3f9;
+}
+
+.payment-table td:first-child, .payment-table th:first-child {
+  text-align: center;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #6b8aaa;
+  border-top: 1px solid #e0ecf5;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .app-container { padding: 1rem; }
+  .calculator-card { padding: 1.2rem; }
+  .form-row { flex-direction: column; gap: 0; }
+  .tabs button { padding: 0.4rem 1rem; font-size: 0.85rem; }
 }
